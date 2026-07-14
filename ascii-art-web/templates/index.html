@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ASCII Art Web</title>
+    <style>
+        body {
+            background-color: #1e1e2e;
+            color: #cdd6f4;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #89b4fa;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: #313244;
+            padding: 30px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 400px;
+        }
+
+        textarea {
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #45475a;
+            color: #cdd6f4;
+            font-size: 1rem;
+            resize: vertical;
+            /* allow resizing */
+            min-height: 100px;
+        }
+
+        .banners {
+            display: flex;
+            gap: 15px;
+            color: #cdd6f4;
+        }
+
+        button {
+            background-color: #89b4fa;
+            color: #1e1e2e;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        pre {
+            margin-top: 30px;
+            color: #a6e3a1;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            /* ensures \n is shown */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ASCII Art Generator</h1>
+    <form action="/ascii-art" method="POST">
+        <textarea name="text" placeholder="Enter your text here..."></textarea>
+        <div class="banners">
+            <label><input type="radio" name="banner" value="standard" checked> Standard</label><br>
+            <label><input type="radio" name="banner" value="shadow"> Shadow</label><br>
+            <label><input type="radio" name="banner" value="thinkertoy"> Thinkertoy</label><br>
+        </div>
+        <button type="submit">Generate</button>
+        <h2>Result</h2>
+    </form>
+    <pre>{{.Result}}</pre>
+</body>
+
+</html>

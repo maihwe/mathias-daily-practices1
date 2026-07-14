@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ASCII Art Web</title>
+</head>
+<body>
+    <h1>ASCII Art Generator</h1>
+
+    <!-- The form sends data to /ascii-art using the POST method -->
+    <form action="/ascii-art" method="POST">
+        
+        <!-- Text input field -->
+        <label for="text-input">Enter your text:</label><br>
+        <textarea id="text-input" name="user-text" rows="5" cols="50" required></textarea>
+        <br><br>
+
+        <!-- Radio buttons to switch between banners -->
+        <p>Select a Banner Style:</p>
+        <input type="radio" id="standard" name="banner-style" value="standard">
+        <label for="standard">Standard</label><br>
+        
+        <input type="radio" id="shadow" name="banner-style" value="shadow">
+        <label for="shadow">Shadow</label><br>
+        
+        <input type="radio" id="thinkertoy" name="banner-style" value="thinkertoy">
+        <label for="thinkertoy">Thinkertoy</label>
+        <br><br>
+
+        <!-- Submit button -->
+        <button type="submit">Generate ASCII Art</button>
+    </form>
+
+    <hr>
+
+    <h2>Result:</h2>
+    <!-- This preformatted tag will display our dynamic Go data perfectly -->
+    <pre>{{.}}</pre>
+
+</body>
+</html>
