@@ -31,7 +31,7 @@ while True:
     if choice.lower() == 'q':
         print("Goodbye!")
         break
-
+# feature: View Hitory
     elif choice == '5':
         if not history:
             print("\n [History is empty]")
@@ -40,7 +40,7 @@ while True:
             for record in history:
                 print(record)
         continue
-
+# Core Logic for Calculations
     elif choice in ('1', '2', '3', '4',):
         try:
             num1 = float(input("Enter first number: "))
